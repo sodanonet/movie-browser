@@ -1,5 +1,13 @@
 # Kickoff to-do list aligned with the challenge document
 
+## Project Initialization ✅
+
+- Create Vite + React + TypeScript project
+- Install all dependencies (React, Redux, Axios, SASS, testing tools)
+- Configure package.json scripts
+- Common configurations
+- Clean up default files
+
 ## Pending Completion
 
 - Project Initialization
