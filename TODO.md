@@ -32,9 +32,16 @@
 - Add API utility functions (image URLs, formatting)
 - Set up API mocks for testing
 
+## Redux Store Setup ✅
+
+- Configure Redux Toolkit store
+- Create movies slice with async thunks
+- Create wishlist slice with localStorage persistence
+- Set up typed Redux hooks
+- Add comprehensive state management tests
+
 ## Pending Completion
 
-- Redux Store Setup
 - SCSS Architecture & Theming System
 - Primitives Components
 - Movie Components

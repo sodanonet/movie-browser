@@ -62,7 +62,7 @@ export interface TMDBResponse<T> {
 }
 
 // Category types
-export type MovieCategory = "popular" | "topRated" | "nowPlaying";
+export type MovieCategory = "popular" | "top_rated" | "now_playing";
 
 export interface CategoryState<T> {
   data: T[];

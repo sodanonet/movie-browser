@@ -32,7 +32,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
-    "no-console": "off",
+    "no-console": "off", // Allow console statements for now
     "prefer-const": "error",
   },
   overrides: [
