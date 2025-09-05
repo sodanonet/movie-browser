@@ -1,0 +1,116 @@
+// CSS Reset & Base Styles
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $text-primary;
+  background-color: $secondary-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-secondary;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  margin-bottom: $spacing-md;
+  color: $text-primary;
+}
+
+h1 { @include font-size($font-size-3xl); }
+h2 { @include font-size($font-size-2xl); }
+h3 { @include font-size($font-size-xl); }
+h4 { @include font-size($font-size-lg); }
+h5 { @include font-size($font-size-base); }
+h6 { @include font-size($font-size-sm); }
+
+p {
+  margin-bottom: $spacing-md;
+  &:last-child { margin-bottom: 0; }
+}
+
+// Links
+a {
+  color: $accent-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: darken($accent-color, 15%);
+    text-decoration: underline;
+  }
+}
+
+// Lists
+ul, ol {
+  padding-left: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Forms
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font: inherit;
+}
+
+// Focus styles
+:focus-visible {
+  outline: 2px solid $accent-color;
+  outline-offset: 2px;
+}
+
+// Selection
+::selection {
+  background: rgba($accent-color, 0.2);
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($text-secondary, 0.4);
+  border-radius: 4px;
+  
+  &:hover {
+    background: rgba($text-secondary, 0.6);
+  }
+}

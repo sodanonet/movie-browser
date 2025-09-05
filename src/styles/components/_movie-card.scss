@@ -1,0 +1,83 @@
+.movie-card {
+  @include card-base;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  @include card-hover;
+
+  &__image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    
+    @include respond-to(md) {
+      height: 400px;
+    }
+  }
+
+  &__content {
+    padding: $spacing-md;
+  }
+
+  &__title {
+    @include font-size($font-size-lg, $line-height-tight);
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-sm;
+    @include line-clamp(2);
+  }
+
+  &__overview {
+    @include font-size($font-size-sm, $line-height-normal);
+    color: $text-secondary;
+    margin-bottom: $spacing-md;
+    @include line-clamp(3);
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include font-size($font-size-sm);
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    color: $accent-color;
+    font-weight: $font-weight-medium;
+
+    &::before {
+      content: '⭐';
+      margin-right: $spacing-xs;
+    }
+  }
+
+  &__year {
+    color: $text-secondary;
+  }
+
+  // Category-specific styling
+  &--popular {
+    @include category-theme($popular-primary, $popular-secondary, $popular-light);
+    
+    .movie-card__rating {
+      color: var(--theme-primary);
+    }
+  }
+
+  &--top-rated {
+    @include category-theme($toprated-primary, $toprated-secondary, $toprated-light);
+    
+    .movie-card__rating {
+      color: var(--theme-primary);
+    }
+  }
+
+  &--now-playing {
+    @include category-theme($nowplaying-primary, $nowplaying-secondary, $nowplaying-light);
+    
+    .movie-card__rating {
+      color: var(--theme-primary);
+    }
+  }
+}

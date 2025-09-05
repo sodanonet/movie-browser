@@ -6,6 +6,14 @@ export default defineConfig({
   resolve: {
     alias: {},
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler",
+        silenceDeprecations: ["legacy-js-api"],
+      },
+    },
+  },
   build: {
     rollupOptions: {
       output: {
