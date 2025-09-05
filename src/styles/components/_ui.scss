@@ -1,0 +1,329 @@
+// UI Components Styles
+
+// Loading Spinner
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xl;
+
+  &--small {
+    padding: $spacing-md;
+    
+    .loading-spinner__circle {
+      width: 24px;
+      height: 24px;
+    }
+
+    .loading-spinner__message {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &--medium {
+    .loading-spinner__circle {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &--large {
+    .loading-spinner__circle {
+      width: 60px;
+      height: 60px;
+    }
+
+    .loading-spinner__message {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__circle {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba($accent-color, 0.3);
+    border-top: 4px solid $accent-color;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: $spacing-md;
+  }
+
+  &__message {
+    color: $text-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    text-align: center;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Error Boundary
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  padding: $spacing-xl;
+
+  &__content {
+    text-align: center;
+    max-width: 500px;
+    padding: $spacing-2xl;
+    background-color: white;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-lg;
+    border: 1px solid rgba($nowplaying-primary, 0.2);
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $nowplaying-primary;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__message {
+    font-size: $font-size-base;
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__details {
+    margin: $spacing-lg 0;
+    text-align: left;
+
+    summary {
+      cursor: pointer;
+      font-weight: $font-weight-medium;
+      color: $text-secondary;
+      margin-bottom: $spacing-sm;
+
+      &:hover {
+        color: $text-primary;
+      }
+    }
+  }
+
+  &__error {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: $border-radius-sm;
+    padding: $spacing-md;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: $font-size-xs;
+    color: #d63384;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  &__button {
+    background-color: $accent-color;
+    color: white;
+    border: none;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+
+    &:focus {
+      outline: 2px solid $accent-color;
+      outline-offset: 2px;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-lg;
+
+    &__content {
+      padding: $spacing-lg;
+    }
+
+    &__title {
+      font-size: $font-size-xl;
+    }
+  }
+}
+
+// Confirmation Modal
+.confirmation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+.confirmation-modal {
+  background-color: white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  max-width: 500px;
+  width: 90%;
+  margin: $spacing-lg;
+  animation: slideIn 0.3s ease-out;
+
+  &--danger {
+    border-top: 4px solid $error-color;
+  }
+
+  &--warning {
+    border-top: 4px solid $warning-color;
+  }
+
+  &--info {
+    border-top: 4px solid $accent-color;
+  }
+
+  &__header {
+    padding: $spacing-xl $spacing-xl $spacing-md;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin: 0;
+  }
+
+  &__body {
+    padding: $spacing-lg $spacing-xl;
+  }
+
+  &__message {
+    font-size: $font-size-base;
+    color: $text-secondary;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-md;
+    padding: $spacing-md $spacing-xl $spacing-xl;
+  }
+
+  &__button {
+    color: $error-color;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: all $transition-fast;
+    border: 2px solid $error-color;
+    min-width: 80px;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $error-color;
+      color: white;
+    }
+
+    &:focus {
+      outline: 2px solid $error-color;
+      outline-offset: 2px;
+    }
+
+
+    &--cancel {
+      background-color: transparent;
+      color: $text-secondary;
+      border-color: rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &--confirm {
+      &--danger {
+        background-color: transparent;
+        color: $error-color;
+        border-color: $error-color;
+
+        &:hover {
+          background-color: $error-color;
+          color: white;
+          transform: translateY(-1px);
+        }
+      }
+
+      &--warning {
+        background-color: $warning-color;
+        color: white;
+        border-color: $warning-color;
+
+        &:hover {
+          background-color: darken($warning-color, 10%);
+          border-color: darken($warning-color, 10%);
+        }
+      }
+
+      &--info {
+        background-color: $accent-color;
+        color: white;
+        border-color: $accent-color;
+
+        &:hover {
+          background-color: darken($accent-color, 10%);
+          border-color: darken($accent-color, 10%);
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    &__footer {
+      flex-direction: column-reverse;
+
+      .confirmation-modal__button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
