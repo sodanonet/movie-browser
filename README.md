@@ -2,9 +2,12 @@
 
 A modern movie browsing application built with React, TypeScript, and Redux, featuring category-based carousels, detailed movie pages, and wishlist functionality.
 
-- Released using free hosting [Render](https://render.com/)
-  - Client - [https://movie-browser-hhip.onrender.com](https://movie-browser-hhip.onrender.com)
-  - SSR - [https://movie-browser-ssr.onrender.com](https://movie-browser-ssr.onrender.com)
+## Released using free hosting [Render](https://render.com/)
+
+<i>**Important**: Render free hosting may need to wait to restart services</i>
+
+- Client - [https://movie-browser-hhip.onrender.com](https://movie-browser-hhip.onrender.com)
+- SSR - [https://movie-browser-ssr.onrender.com](https://movie-browser-ssr.onrender.com)
 
 ## Features
 
