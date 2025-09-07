@@ -1,7 +1,7 @@
 // Cache duration constants (in milliseconds)
 export const CACHE_DURATION = {
-  FILMS: 5 * 60 * 1000, // 5 minutes
-  FILM_DETAIL: 30 * 60 * 1000, // 30 minutes
+  MOVIES: 5 * 60 * 1000, // 5 minutes
+  MOVIE_DETAIL: 30 * 60 * 1000, // 30 minutes
   SEARCH_RESULTS: 2 * 60 * 1000, // 2 minutes
 } as const;
 
@@ -54,5 +54,5 @@ export const BREAKPOINTS = {
 export const STORAGE_KEYS = {
   WISHLIST: "movieBrowser_wishlist",
   THEME: "movieBrowser_theme",
-  LAST_VISITED_FILM: "movieBrowser_lastMovie",
+  LAST_VISITED_MOVIE: "movieBrowser_lastMovie",
 } as const;

@@ -1,5 +1,5 @@
 import { MovieCategory } from "@/types/movie";
-import { CATEGORY_THEMES } from "./constants";
+import { CATEGORY_THEMES, CACHE_DURATION } from "./constants";
 
 /**
  * Returns the theme associated with a given movie category.
@@ -9,6 +9,20 @@ import { CATEGORY_THEMES } from "./constants";
  */
 export const getCategoryTheme = (category: MovieCategory): string => {
   return CATEGORY_THEMES[category] || "popular";
+};
+
+/**
+ * Determines whether the cache is still valid based on the last fetched timestamp and a specified duration.
+ *
+ * @param lastFetched - The timestamp (in milliseconds) when the data was last fetched.
+ * @param duration - The cache validity duration in milliseconds. Defaults to `CACHE_DURATION.MOVIES` if not provided.
+ * @returns `true` if the cache is still valid; otherwise, `false`.
+ */
+export const isCacheValid = (
+  lastFetched: number,
+  duration: number = CACHE_DURATION.MOVIES
+): boolean => {
+  return Date.now() - lastFetched < duration;
 };
 
 /**
