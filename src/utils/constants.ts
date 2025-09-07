@@ -1,41 +1,58 @@
-// API Configuration
-export const TMDB_CONFIG = {
-  BASE_URL: "https://api.themoviedb.org/3",
-  IMAGE_BASE_URL: "https://image.tmdb.org/t/p",
-  CACHE_TIME: 5 * 60 * 1000, // 5 minutes
+// Cache duration constants (in milliseconds)
+export const CACHE_DURATION = {
+  FILMS: 5 * 60 * 1000, // 5 minutes
+  FILM_DETAIL: 30 * 60 * 1000, // 30 minutes
+  SEARCH_RESULTS: 2 * 60 * 1000, // 2 minutes
 } as const;
 
-// Image sizes
-export const IMAGE_SIZES = {
-  POSTER_SMALL: "w185",
-  POSTER_MEDIUM: "w342",
-  POSTER_LARGE: "w500",
-  BACKDROP_MEDIUM: "w780",
-  BACKDROP_LARGE: "w1280",
+// Film category display names
+export const CATEGORY_NAMES = {
+  popular: "Popular Movies",
+  top_rated: "Top Rated",
+  now_playing: "Now Playing",
 } as const;
 
-// Movie categories
-export const MOVIE_CATEGORIES = {
-  POPULAR: "popular",
-  TOP_RATED: "topRated",
-  NOW_PLAYING: "nowPlaying",
-} as const;
-
-// Theme colors for categories
+// Film category themes for styling
 export const CATEGORY_THEMES = {
-  popular: {
-    primary: "#3b82f6",
-    secondary: "#1d4ed8",
-    light: "#dbeafe",
+  popular: "popular",
+  top_rated: "top-rated",
+  now_playing: "now-playing",
+} as const;
+
+// Image size constants
+export const IMAGE_SIZES = {
+  POSTER: {
+    SMALL: "w185",
+    MEDIUM: "w300",
+    LARGE: "w500",
+    XLARGE: "w780",
   },
-  topRated: {
-    primary: "#f59e0b",
-    secondary: "#d97706",
-    light: "#fef3c7",
+  BACKDROP: {
+    SMALL: "w300",
+    MEDIUM: "w780",
+    LARGE: "w1280",
+    ORIGINAL: "original",
   },
-  nowPlaying: {
-    primary: "#ef4444",
-    secondary: "#dc2626",
-    light: "#fee2e2",
-  },
+} as const;
+
+// Animation durations
+export const ANIMATION_DURATION = {
+  FAST: 150,
+  MEDIUM: 300,
+  SLOW: 500,
+} as const;
+
+// Breakpoints (should match SCSS variables)
+export const BREAKPOINTS = {
+  SM: 640,
+  MD: 768,
+  LG: 1024,
+  XL: 1280,
+} as const;
+
+// Local storage keys
+export const STORAGE_KEYS = {
+  WISHLIST: "movieBrowser_wishlist",
+  THEME: "movieBrowser_theme",
+  LAST_VISITED_FILM: "movieBrowser_lastMovie",
 } as const;

@@ -1,3 +1,6 @@
+@use '../abstracts/index' as *;
+
+// Movie Card Component Styles
 .movie-card {
   @include card-base;
   position: relative;

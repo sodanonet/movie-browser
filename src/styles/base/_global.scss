@@ -1,19 +1,7 @@
-// CSS Reset & Base Styles
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@use '../abstracts/index' as *;
+@use "sass:color";
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-}
+// Global Styles
 
 body {
   font-family: $font-family-primary;
@@ -23,6 +11,12 @@ body {
   background-color: $secondary-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 // Typography
@@ -53,7 +47,7 @@ a {
   transition: color $transition-fast;
   
   &:hover {
-    color: darken($accent-color, 15%);
+    color: color.adjust($accent-color, $lightness: -15%);
     text-decoration: underline;
   }
 }
@@ -86,9 +80,10 @@ input, textarea, select {
 }
 
 // Focus styles
-:focus-visible {
+*:focus-visible {
   outline: 2px solid $accent-color;
   outline-offset: 2px;
+  border-radius: $border-radius-sm;
 }
 
 // Selection
@@ -112,5 +107,27 @@ input, textarea, select {
   
   &:hover {
     background: rgba($text-secondary, 0.6);
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $spacing-md;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

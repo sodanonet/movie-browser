@@ -1,10 +1,13 @@
 // Keep import order as it is important!
 
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+// Abstracts
+@use 'abstracts/index' as *;
 
-@import 'base';
+// Base styles
+@use 'base/reset';
+@use 'base/global';
 
-@import 'components/movie-card';
-@import 'components/ui';
-
+// Component styles
+@use 'components/ui';
+@use 'components/carousel';
+@use 'components/movie-card';
