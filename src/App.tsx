@@ -9,7 +9,7 @@ import PerformanceMonitor from "./components/ui/PerformanceMonitor";
 
 // Lazy load route components for code splitting
 const HomePage = lazy(() => import("./pages/HomePage"));
-const FilmDetailPage = lazy(() => import("./pages/FilmDetailPage"));
+const MovieDetailPage = lazy(() => import("./pages/MovieDetailPage"));
 const WishlistPage = lazy(() => import("./pages/WishlistPage"));
 
 // Internal App content component (without Provider/Router)
@@ -22,7 +22,7 @@ export function AppContent() {
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/movie/:id" element={<FilmDetailPage />} />
+              <Route path="/movie/:id" element={<MovieDetailPage />} />
               <Route path="/wishlist" element={<WishlistPage />} />
             </Routes>
           </Suspense>

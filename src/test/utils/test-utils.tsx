@@ -59,9 +59,9 @@ export function renderWithProviders(
 ) {
   function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
     return (
-      <MemoryRouter>
-        <Provider store={store}>{children}</Provider>
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter> {children}</MemoryRouter>
+      </Provider>
     );
   }
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
