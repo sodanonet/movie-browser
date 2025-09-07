@@ -1,13 +1,16 @@
 // Keep import order as it is important!
 
 // Abstracts
-@use 'abstracts/index' as *;
+@use "abstracts/index" as *;
 
 // Base styles
-@use 'base/reset';
-@use 'base/global';
+@use "base/reset";
+@use "base/global";
+
+// Layout styles
+@use "layout/navigation";
 
 // Component styles
-@use 'components/ui';
-@use 'components/carousel';
-@use 'components/movie-card';
+@use "components/ui";
+@use "components/carousel";
+@use "components/movie-card";

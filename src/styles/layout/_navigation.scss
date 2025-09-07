@@ -1,0 +1,118 @@
+@use "../abstracts/index" as *;
+
+// Navigation base Styles
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $primary-color;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-md;
+
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md $spacing-lg;
+
+    @media (max-width: $breakpoint-md) {
+      padding: $spacing-sm $spacing-md;
+    }
+  }
+
+  .logo {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $text-light;
+    text-decoration: none;
+    transition: all $transition-fast;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      outline: 2px solid $accent-color;
+      outline-offset: 2px;
+      border-radius: $border-radius-sm;
+    }
+
+    &__text {
+      background: linear-gradient(45deg, $accent-color, $popular-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: $spacing-lg;
+    align-items: center;
+
+    @media (max-width: $breakpoint-sm) {
+      gap: $spacing-md;
+    }
+  }
+
+  .nav-link {
+    color: $text-light;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    transition: color $transition-fast;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-sm;
+    position: relative;
+
+    &:hover {
+      color: $accent-color;
+    }
+
+    &:focus {
+      outline: 2px solid $accent-color;
+      outline-offset: 2px;
+    }
+
+    &--active {
+      color: $accent-color;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: $accent-color;
+        border-radius: 1px;
+      }
+    }
+
+    &__count {
+      background-color: rgba($accent-color, 0.1);
+      color: $accent-color;
+      padding: $spacing-xs;
+      border-radius: $border-radius-sm;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      margin-left: $spacing-xs;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      font-size: $font-size-sm;
+
+      &__count {
+        font-size: $font-size-xs;
+        padding: 2px $spacing-xs;
+      }
+    }
+  }
+}

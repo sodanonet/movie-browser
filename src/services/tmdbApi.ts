@@ -8,8 +8,8 @@ import {
 
 // Environment variable handling for Vite
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "https://api.themoviedb.org/3";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY || "test-api-key";
+  process.env.VITE_API_BASE_URL || "https://api.themoviedb.org/3";
+const API_KEY = process.env.VITE_TMDB_API_KEY || "test-api-key";
 
 // API validation
 if (!API_KEY || API_KEY === "your_tmdb_api_key_here") {
