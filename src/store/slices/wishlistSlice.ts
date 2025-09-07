@@ -12,7 +12,11 @@ const initialState: WishlistState = {
 // Load wishlist from localStorage on init
 const loadWishlistFromStorage = (): Movie[] => {
   try {
-    const stored = localStorage.getItem("film-browser-wishlist");
+    const localStorage =
+      typeof window !== "undefined" ? window.localStorage : null;
+    const stored = localStorage
+      ? localStorage.getItem("film-browser-wishlist")
+      : null;
     return stored ? JSON.parse(stored) : [];
   } catch (error) {
     console.error("Error loading wishlist from localStorage:", error);

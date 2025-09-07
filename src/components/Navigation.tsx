@@ -16,7 +16,7 @@ const Navigation = () => {
     <nav className="navigation" role="navigation" aria-label="Main navigation">
       <div className="nav-container">
         <Link to="/" className="logo" aria-label="Movie Browser - Home">
-          <span className="logo__text">Movie Browser</span>
+          <span className="logo__text">🎬 Movie Browser</span>
         </Link>
 
         <div className="nav-links">
