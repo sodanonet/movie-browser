@@ -37,7 +37,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <PerformanceMonitor />
+        <PerformanceMonitor /> {/* Tracks metrics in production */}
         <AppContent />
       </Router>
     </Provider>
