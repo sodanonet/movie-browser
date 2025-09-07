@@ -50,7 +50,7 @@ const MovieCard = ({
   return (
     <Link
       ref={ref as never}
-      to={`/movie/${movie.id}`}
+      to={`/movie-info/${movie.id}`}
       className={`movie-card ${themeClass} ${
         !imageLoaded && shouldLoadImage ? "movie-card--loading" : ""
       }`}

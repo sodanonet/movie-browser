@@ -1,0 +1,39 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 1,
+      "title": "Test Popular Movie 1",
+      "overview": "This is a test popular movie",
+      "poster_path": "/test-poster-1.jpg",
+      "backdrop_path": "/test-backdrop-1.jpg",
+      "release_date": "2023-01-15",
+      "vote_average": 8.5,
+      "vote_count": 1000,
+      "genre_ids": [28, 12, 878],
+      "adult": false,
+      "original_language": "en",
+      "original_title": "Test Popular Movie 1",
+      "popularity": 1000.5,
+      "video": false
+    },
+    {
+      "id": 2,
+      "title": "Test Popular Movie 2",
+      "overview": "Another test popular movie",
+      "poster_path": "/test-poster-2.jpg",
+      "backdrop_path": "/test-backdrop-2.jpg",
+      "release_date": "2023-06-20",
+      "vote_average": 7.8,
+      "vote_count": 750,
+      "genre_ids": [35, 10749],
+      "adult": false,
+      "original_language": "en",
+      "original_title": "Test Popular Movie 2",
+      "popularity": 850.3,
+      "video": false
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}

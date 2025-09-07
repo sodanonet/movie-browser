@@ -61,6 +61,7 @@ const ConfirmationModal = ({
     <div className="confirmation-modal-overlay" onClick={handleBackdropClick}>
       <div
         className={`confirmation-modal confirmation-modal--${type}`}
+        data-cy="confirmation-modal"
         role="dialog"
         aria-labelledby="modal-title"
         aria-describedby="modal-message"
@@ -81,6 +82,7 @@ const ConfirmationModal = ({
           <button
             type="button"
             className="confirmation-modal__button confirmation-modal__button--cancel"
+            data-cy="modal-cancel-button"
             onClick={onCancel}
           >
             {cancelText}
@@ -88,6 +90,7 @@ const ConfirmationModal = ({
           <button
             type="button"
             className={`confirmation-modal__button confirmation-modal__button--confirm confirmation-modal__button--${type}`}
+            data-cy="modal-confirm-button"
             onClick={onConfirm}
             autoFocus
           >

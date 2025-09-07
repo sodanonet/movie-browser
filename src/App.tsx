@@ -22,7 +22,7 @@ export function AppContent() {
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/movie/:id" element={<MovieDetailPage />} />
+              <Route path="/movie-info/:id" element={<MovieDetailPage />} />
               <Route path="/wishlist" element={<WishlistPage />} />
             </Routes>
           </Suspense>

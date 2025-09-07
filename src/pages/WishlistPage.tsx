@@ -32,7 +32,7 @@ const WishlistPage = () => {
   };
 
   const handleViewMovie = (movieId: number) => {
-    navigate(`/movie/${movieId}`);
+    navigate(`/movie-info/${movieId}`);
   };
 
   const getImageUrl = (path: string | null) => {
@@ -51,6 +51,7 @@ const WishlistPage = () => {
             </span>
             <button
               className="wishlist__clear-btn"
+              data-cy="clear-wishlist-button"
               onClick={handleClearWishlist}
               aria-label="Clear entire wishlist"
             >
@@ -63,7 +64,11 @@ const WishlistPage = () => {
       {items.length === 0 ? (
         <div className="wishlist__empty">
           <p>Your wishlist is empty. Start adding some movies!</p>
-          <button className="browse-movies-btn" onClick={() => navigate("/")}>
+          <button
+            className="browse-movies-btn"
+            data-cy="browse-movies-btn"
+            onClick={() => navigate("/")}
+          >
             Browse Movies
           </button>
         </div>
@@ -76,6 +81,7 @@ const WishlistPage = () => {
                   src={getImageUrl(movie.poster_path)}
                   alt={`${movie.title} poster`}
                   className="wishlist__item__image"
+                  data-cy="view-movie-info-button"
                   onClick={() => handleViewMovie(movie.id)}
                 />
               </div>
@@ -85,6 +91,7 @@ const WishlistPage = () => {
                   <button
                     className="wishlist__item__remove-btn"
                     onClick={() => handleRemoveFromWishlist(movie.id)}
+                    data-cy="remove-movie-wishlist-button"
                     aria-label={`Remove ${movie.title} from wishlist`}
                   >
                     💔

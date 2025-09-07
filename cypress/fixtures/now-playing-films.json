@@ -1,0 +1,23 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 4,
+      "title": "Test Now Playing Movie 1",
+      "overview": "This is a test now playing movie",
+      "poster_path": "/test-poster-4.jpg",
+      "backdrop_path": "/test-backdrop-4.jpg",
+      "release_date": "2023-12-01",
+      "vote_average": 8.0,
+      "vote_count": 500,
+      "genre_ids": [27, 53],
+      "adult": false,
+      "original_language": "en",
+      "original_title": "Test Now Playing Movie 1",
+      "popularity": 950.2,
+      "video": false
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}

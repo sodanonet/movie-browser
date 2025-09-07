@@ -1,0 +1,23 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "id": 3,
+      "title": "Test Top Rated Movie 1",
+      "overview": "This is a test top rated movie",
+      "poster_path": "/test-poster-3.jpg",
+      "backdrop_path": "/test-backdrop-3.jpg",
+      "release_date": "2023-03-10",
+      "vote_average": 9.2,
+      "vote_count": 2000,
+      "genre_ids": [18, 36],
+      "adult": false,
+      "original_language": "en",
+      "original_title": "Test Top Rated Movie 1",
+      "popularity": 1200.8,
+      "video": false
+    }
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}
