@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import { visualizer } from "rollup-plugin-visualizer";
+import { createHtmlPlugin } from "vite-plugin-html";
 
 // Check if this is an SSR build by looking at the command line arguments
 const isSSRBuild = process.argv.includes("--ssr");
@@ -15,6 +16,20 @@ export default defineConfig((config) => {
     },
     plugins: [
       react(),
+      // HTML optimization
+      createHtmlPlugin({
+        minify: {
+          collapseWhitespace: true,
+          keepClosingSlash: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true,
+          minifyCSS: true,
+          minifyJS: true,
+        },
+      }),
       // Bundle analyzer - generates stats.html (only for client build)
       !isSSRBuild &&
         (visualizer({
@@ -36,6 +51,7 @@ export default defineConfig((config) => {
       alias: {},
     },
     build: {
+      // Optimize chunks
       rollupOptions: {
         // Only set input and manualChunks for client builds
         ...(isSSRBuild
@@ -73,6 +89,18 @@ export default defineConfig((config) => {
     server: {
       port: 5174,
       host: true,
+    },
+    // Dependency optimization
+    optimizeDeps: {
+      include: [
+        "react",
+        "react-dom",
+        "react-redux",
+        "@reduxjs/toolkit",
+        "react-router-dom",
+        "axios",
+      ],
+      exclude: ["@testing-library/jest-dom"],
     },
   };
 });
