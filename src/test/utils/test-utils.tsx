@@ -5,7 +5,6 @@ import { configureStore } from "@reduxjs/toolkit";
 import wishlistReducer from "../../store/slices/wishlistSlice";
 import moviesReducer from "../../store/slices/moviesSlice";
 import { RootState } from "../../store";
-import { MemoryRouter } from "react-router-dom";
 
 // Create a test store factory
 export function createTestStore(
@@ -58,11 +57,7 @@ export function renderWithProviders(
   }: ExtendedRenderOptions = {}
 ) {
   function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
-    return (
-      <MemoryRouter>
-        <Provider store={store}>{children}</Provider>
-      </MemoryRouter>
-    );
+    return <Provider store={store}>{children}</Provider>;
   }
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
